@@ -90,11 +90,17 @@ form.addEventListener("submit", event => {
 
     const texto = campo.value.trim();
 
-    if (texto === "") {
-        mensagemErro.textContent = "Digite uma tarefa antes de adicionar!";
-        campo.focus();
-        return;
-    }
+   if (texto === "") {
+    mensagemErro.textContent = "Digite uma tarefa antes de adicionar!";
+    campo.focus();
+    return;
+}
+
+if (texto.length < 3) {
+    mensagemErro.textContent = "A tarefa precisa ter pelo menos 3 caracteres!";
+    campo.focus();
+    return;
+}
 
     mensagemErro.textContent = "";
 
