@@ -30,6 +30,7 @@ function renderizarTarefas() {
     lista.innerHTML = "";
 
     const tarefasFiltradas = tarefas.filter(tarefa => {
+        campo.setAttribute("aria-invalid", "true");
         if (filtroAtual === "pendentes") return !tarefa.concluida;
         if (filtroAtual === "concluidas") return tarefa.concluida;
         return true;
@@ -103,6 +104,7 @@ if (texto.length < 3) {
 }
 
     mensagemErro.textContent = "";
+    campo.setAttribute("aria-invalid", "false");
 
     const novaTarefa = {
         id: Date.now(),
