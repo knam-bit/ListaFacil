@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ListaFácil: organize suas tarefas de forma simples.">
+    <title>ListaFácil | Organize sua rotina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">Lista<span>Fácil.</span></div>
+        <p>Organize seu dia, uma tarefa de cada vez.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="boas-vindas">
+            <p class="subtitulo">SEU ESPAÇO DE ORGANIZAÇÃO</p>
+            <h1>Olá! Vamos organizar seu dia?</h1>
+            <p>Adicione suas tarefas e acompanhe seu progresso.</p>
+        </section>
+
+        <section class="resumo">
+            <div class="card-resumo">
+                <span>Total de tarefas</span>
+                <strong id="totalTarefas">0</strong>
+            </div>
+
+            <div class="card-resumo">
+                <span>Pendentes</span>
+                <strong id="tarefasPendentes">0</strong>
+            </div>
+
+            <div class="card-resumo">
+                <span>Concluídas</span>
+                <strong id="tarefasConcluidas">0</strong>
+            </div>
+        </section>
+
+        <section class="painel">
+            <h2>Adicionar nova tarefa</h2>
+
+            <form id="formTarefa">
+                <input
+                    type="text"
+                    id="campoTarefa"
+                    placeholder="O que você precisa fazer?"
+                    maxlength="100"
+                    autocomplete="off"
+                >
+
+                <button type="submit">Adicionar tarefa</button>
+            </form>
+
+            <p id="mensagemErro" class="mensagem-erro" role="alert"></p>
+        </section>
+
+        <section class="painel">
+            <div class="titulo-lista">
+                <h2>Minhas tarefas</h2>
+                <span id="contadorLista">0 tarefas</span>
+            </div>
+
+            <div class="filtros">
+                <button class="filtro ativo" data-filtro="todas">Todas</button>
+                <button class="filtro" data-filtro="pendentes">Pendentes</button>
+                <button class="filtro" data-filtro="concluidas">Concluídas</button>
+            </div>
+
+            <ul id="listaTarefas" class="lista-tarefas"></ul>
+
+            <p id="mensagemVazia" class="mensagem-vazia">
+                Você ainda não possui tarefas. Que tal adicionar uma?
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>ListaFácil © 2026 - Feito para facilitar sua rotina.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

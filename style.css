@@ -1,0 +1,253 @@
+
+:root {
+    --fundo: #f5f1e9;
+    --branco: #fffefc;
+    --marrom: #514238;
+    --verde: #77856b;
+    --cinza: #827b72;
+    --borda: #e7e0d5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--marrom);
+    min-height: 100vh;
+}
+
+.cabecalho {
+    background: var(--branco);
+    padding: 25px 8%;
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: var(--verde);
+}
+
+.cabecalho p {
+    color: var(--cinza);
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.container {
+    width: min(900px, 90%);
+    margin: 45px auto;
+}
+
+.boas-vindas {
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    color: var(--verde);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.boas-vindas h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.boas-vindas p:last-child {
+    color: var(--cinza);
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card-resumo, .painel {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.card-resumo span {
+    display: block;
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.card-resumo strong {
+    display: block;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.painel {
+    margin-bottom: 22px;
+}
+
+.painel h2 {
+    font-size: 19px;
+    margin-bottom: 18px;
+}
+
+#formTarefa {
+    display: flex;
+    gap: 10px;
+}
+
+#campoTarefa {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+}
+
+#campoTarefa:focus {
+    border-color: var(--verde);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#formTarefa button {
+    background: var(--verde);
+    color: white;
+    padding: 14px 20px;
+}
+
+#formTarefa button:hover {
+    opacity: 0.85;
+}
+
+.mensagem-erro {
+    color: #bd3434;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-lista span {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.filtros {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    background: var(--fundo);
+    color: var(--marrom);
+    padding: 9px 15px;
+}
+
+.filtro.ativo {
+    background: var(--verde);
+    color: white;
+}
+
+.lista-tarefas {
+    list-style: none;
+}
+
+.item-tarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 0;
+    border-top: 1px solid var(--borda);
+}
+
+.conteudo-tarefa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.conteudo-tarefa input {
+    accent-color: var(--verde);
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+
+.texto-tarefa {
+    overflow-wrap: anywhere;
+}
+
+.item-tarefa.concluida .texto-tarefa {
+    text-decoration: line-through;
+    color: var(--cinza);
+}
+
+.botao-excluir {
+    background: #f8e9e5;
+    color: #a33d32;
+    padding: 9px 12px;
+}
+
+.mensagem-vazia {
+    color: var(--cinza);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    color: var(--cinza);
+    font-size: 13px;
+    padding: 25px;
+}
+
+@media (max-width: 600px) {
+    .resumo {
+        grid-template-columns: 1fr;
+    }
+
+    .boas-vindas h1 {
+        font-size: 24px;
+    }
+
+    #formTarefa {
+        flex-direction: column;
+    }
+
+    #formTarefa button {
+        width: 100%;
+    }
+
+    .card-resumo {
+        padding: 16px;
+    }
+}
