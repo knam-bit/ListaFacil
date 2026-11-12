@@ -30,6 +30,7 @@ function renderizarTarefas() {
     lista.innerHTML = "";
 
     const tarefasFiltradas = tarefas.filter(tarefa => {
+        campo.setAttribute("aria-invalid", "true");
         if (filtroAtual === "pendentes") return !tarefa.concluida;
         if (filtroAtual === "concluidas") return tarefa.concluida;
         return true;
@@ -90,13 +91,20 @@ form.addEventListener("submit", event => {
 
     const texto = campo.value.trim();
 
-    if (texto === "") {
-        mensagemErro.textContent = "Digite uma tarefa antes de adicionar!";
-        campo.focus();
-        return;
-    }
+   if (texto === "") {
+    mensagemErro.textContent = "Digite uma tarefa antes de adicionar!";
+    campo.focus();
+    return;
+}
+
+if (texto.length < 3) {
+    mensagemErro.textContent = "A tarefa precisa ter pelo menos 3 caracteres!";
+    campo.focus();
+    return;
+}
 
     mensagemErro.textContent = "";
+    campo.setAttribute("aria-invalid", "false");
 
     const novaTarefa = {
         id: Date.now(),
